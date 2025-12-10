@@ -22,15 +22,12 @@
 
     <forward name="success" path="/hello.jsp"/>
 </action>
-<action
-    path="/employees"
-    type="com.example.actions.EmployeeAction"
-    name="employeeForm"
-    scope="request"
-    validate="false">
-
-    <forward name="list" path="/employee-list.jsp"/>
-</action>
+    <action path="/listEmployees"
+            type="com.example.actions.ListEmployeeAction"
+            scope="request"
+            validate="false">
+      <forward name="success" path="/employee-list.jsp"/>
+    </action>
     </action-mappings>
 
 </struts-config>

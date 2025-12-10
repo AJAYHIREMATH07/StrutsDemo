@@ -5,19 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeDAO {
-
-    private static final List<Employee> employees = new ArrayList<>();
-
-    static {
-        employees.add(new Employee(1, "Ajay", "IT", 50000));
-        employees.add(new Employee(2, "Ravi", "HR", 45000));
-    }
-
+    // For practice we return a hard-coded list. Later replace with DB code.
     public List<Employee> findAll() {
-        return employees;
-    }
-
-    public void add(Employee e) {
-        employees.add(e);
+        List<Employee> list = new ArrayList<>();
+        list.add(new Employee(1, "Alice", "HR", 60000.0));
+        list.add(new Employee(2, "Bob", "Engineering", 80000.0));
+        list.add(new Employee(3, "Charlie", "Sales", 55000.0));
+        return list;
     }
 }

@@ -1,0 +1,17 @@
+# Ignore compiled Java classes
+*.class
+
+# Maven / Gradle build directories
+target/
+build/
+out/
+
+# IDE files (Eclipse, IntelliJ, VSCode)
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+*.class
+*.class

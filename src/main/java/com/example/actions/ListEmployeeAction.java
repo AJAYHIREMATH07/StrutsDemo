@@ -12,21 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 public class ListEmployeeAction extends Action {
+    private EmployeeDAO dao = new EmployeeDAO();
 
     @Override
-    public ActionForward execute(ActionMapping mapping,
-                                 ActionForm form,
-                                 HttpServletRequest request,
-                                 HttpServletResponse response) throws Exception {
-
-        // 1. Call DAO to get data (Model)
-        EmployeeDAO dao = new EmployeeDAO();
+    public ActionForward execute(ActionMapping mapping, ActionForm form,
+                                 HttpServletRequest request, HttpServletResponse response) throws Exception {
         List<Employee> employees = dao.findAll();
-
-        // 2. Put list into request scope so JSP / JSTL can use it
-        request.setAttribute("employeeList", employees);
-
-        // 3. Forward to JSP page ll
+        request.setAttribute("employees", employees);
         return mapping.findForward("success");
     }
 }

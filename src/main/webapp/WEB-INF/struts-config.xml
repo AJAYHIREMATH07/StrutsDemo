@@ -9,6 +9,7 @@
 <form-beans>
     <form-bean name="helloForm" type="com.example.forms.HelloForm"/>
     <form-bean name="employeeForm" type="com.example.forms.EmployeeForm"/>
+    <form-bean name="customerForm" type="com.example.forms.CustomerForm"/>    
 </form-beans>
 
 
@@ -28,6 +29,21 @@
             validate="false">
       <forward name="success" path="/employee-list.jsp"/>
     </action>
+
+    <action
+        path="/customer"
+        type="com.example.actions.CustomerAction"
+        name="customerForm"
+        scope="request"
+        validate="false"
+        input="/customer.jsp">
+
+        <forward name="success" path="/customer.jsp"/>
+    </action>
+
+    
     </action-mappings>
+    <message-resources parameter="ApplicationResources"/>
+    
 
 </struts-config>
